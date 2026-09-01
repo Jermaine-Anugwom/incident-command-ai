@@ -1,0 +1,92 @@
+{
+  "title": "Choose Incident Command AI's visual world",
+  "question": "Choose the operational world that should carry the recruiter-facing war room.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Black-Box Reconstruction Table",
+      "kicker": "THE ROLL",
+      "lineage": "aviation recorder analysis and forensic event reconstruction",
+      "thesis": "The incident is reconstructed as a chain of evidence before anyone is allowed to act.",
+      "palette": ["#07090b", "#f1efe8", "#ffb000", "#38d6b5"],
+      "materials": ["smoked recorder glass", "thermal event paper", "engraved timecode rails"],
+      "viewport": "A central evidence spine joins the live severity signal, affected-service topology, causal hypotheses, and an approval rail in one continuous reconstruction surface.",
+      "risk": "Dense forensic detail must remain instantly scannable during an active incident.",
+      "raised": [
+        {"from": "Data Sublime", "raise": "Numerical precision and timecode density become first-class evidence, never decoration."},
+        {"from": "Tensegrity", "raise": "Every affected service visibly traces to the dependency and countermeasure that support it."}
+      ],
+      "comp": ".impeccable/mocks/decision/assigned.webp"
+    },
+    {
+      "id": "model-pick",
+      "label": "Fireground Command Board",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "incident command tactical worksheets, unit tags, and accountability boards",
+      "thesis": "Every responder, hazard, objective, and approval occupies a physically accountable place.",
+      "palette": ["#f3eddf", "#171713", "#d84a2b", "#f1b82d"],
+      "materials": ["laminated command sheet", "grease pencil", "magnetic unit tags"],
+      "viewport": "A broad operational board centers incident objectives, with draggable evidence tags feeding a guarded action lane and an unmistakable command clock.",
+      "risk": "The most familiar incident metaphor can feel analog unless the evidence graph and automation are visibly alive.",
+      "comp": ".impeccable/mocks/decision/model-pick.webp"
+    },
+    {
+      "id": "challenger-splitflap",
+      "label": "Live Concourse Board",
+      "verdict": "competitive",
+      "lineage": "rail concourse split-flap boards",
+      "thesis": "The whole response operation resolves into ranked live rows that visibly change when evidence changes.",
+      "palette": ["#0b0c0d", "#f4f1e8", "#f3ad2b", "#c8433a"],
+      "materials": ["matte split flaps", "brushed steel frame", "amber state lamps"],
+      "viewport": "A wall-scale status board ranks hypotheses, services, and actions by time while a selected row expands into evidence and authorization detail.",
+      "case": "It wins immediate status recognition but holds less causal depth than the reconstruction table.",
+      "risk": "Fixed rows can flatten the relationships that make the AI reasoning inspectable.",
+      "comp": ".impeccable/mocks/decision/challenger-splitflap.webp",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-split-flap-concourse-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/signals-instruments-split-flap-concourse.webp"
+    },
+    {
+      "id": "challenger-datasublime",
+      "label": "Data-Sublime Field",
+      "verdict": "declined",
+      "lineage": "barcode columns and sine lattices",
+      "thesis": "The incident becomes a pure field of time, frequency, and machine evidence.",
+      "palette": ["#000000", "#ffffff"],
+      "materials": ["pixel-crisp bars", "hairline rules", "timecode numerics"],
+      "viewport": "Evidence streams fill the frame while one selected anomaly pulls its source records into focus.",
+      "case": "It loses operator familiarity and action clarity even though its data discipline is exceptional.",
+      "kept": "Timecode precision and disciplined numerical hierarchy.",
+      "risk": "The visual intensity can compete with urgent operational decisions.",
+      "hero": "https://impeccable.style/worlds/cards/ikeda-datamatics-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/ikeda-datamatics.webp"
+    },
+    {
+      "id": "challenger-tensegrity",
+      "label": "Dependency Tensegrity",
+      "verdict": "declined",
+      "lineage": "tension-and-compression engineering structures",
+      "thesis": "Every service failure is shown as a force traveling through dependencies and countermeasures.",
+      "palette": ["#e8e5dd", "#101214", "#d13d31"],
+      "materials": ["carbon rods", "red tension cord", "engineering annotations"],
+      "viewport": "A living dependency structure dominates the center while plans lock or release its stressed members.",
+      "case": "It explains blast radius beautifully but loses speed for responders who need a chronological command view.",
+      "kept": "Trace every visible failure to its dependency and countermeasure.",
+      "risk": "Spatial novelty can obscure familiar incident chronology.",
+      "hero": "https://impeccable.style/worlds/cards/kinetic-sculpture-automata-tensegrity-breathing-column-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/kinetic-sculpture-automata-tensegrity-breathing-column.webp"
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "comp", "toggle": true},
+  "canon": true,
+  "canonCard": {
+    "label": "Enterprise Operations Standard",
+    "thesis": "A conventional dark enterprise dashboard executed with exceptional clarity.",
+    "palette": ["#0f172a", "#f8fafc", "#2563eb", "#f59e0b"],
+    "materials": ["clean grid", "restrained cards", "standard status charts"],
+    "viewport": "A navigation rail, KPI row, incident table, side detail panel, and approval drawer.",
+    "risk": "Immediately usable but visually indistinguishable from many enterprise dashboards.",
+    "comp": ".impeccable/mocks/decision/canon.webp"
+  },
+  "steer": true
+}

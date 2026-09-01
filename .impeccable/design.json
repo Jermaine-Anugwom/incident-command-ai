@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-01T17:00:00-05:00",
+  "title": "Design System: Incident Command AI",
+  "extensions": {
+    "colorMeta": {
+      "command-paper": { "role": "neutral", "displayName": "Command Paper", "canonical": "#f9f8f5", "tonalRamp": ["#262522", "#4b4944", "#706d66", "#959189", "#bab5ab", "#dedad2", "#eeeae4", "#f9f8f5"] },
+      "command-ink": { "role": "neutral", "displayName": "Command Ink", "canonical": "#090808", "tonalRamp": ["#090808", "#211f1e", "#3d3936", "#5d5752", "#827a72", "#aaa29a", "#d2ccc5", "#f4f1ed"] },
+      "guard-red": { "role": "primary", "displayName": "Guard Red", "canonical": "#c52203", "tonalRamp": ["#350900", "#5c1000", "#841700", "#ad1e00", "#d83c1d", "#eb755e", "#f6afa0", "#fde8e2"] },
+      "command-amber": { "role": "primary", "displayName": "Command Amber", "canonical": "#f3b512", "tonalRamp": ["#342500", "#5d4400", "#866300", "#b18500", "#daa807", "#f3c84d", "#f8df94", "#fff4d3"] },
+      "evidence-green": { "role": "secondary", "displayName": "Evidence Green", "canonical": "#1e6b45", "tonalRamp": ["#082319", "#0e3a29", "#145139", "#1e6b45", "#3d8b63", "#71aa89", "#acd0bb", "#e3f1e8"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Command Display", "purpose": "Incident identity, sector names, gate title, and time anchors." },
+      "body": { "displayName": "Operational Body", "purpose": "Evidence, context, instructions, and audit details." },
+      "label": { "displayName": "Trace Label", "purpose": "Provenance, state, and structural metadata." }
+    },
+    "shadows": [
+      { "name": "board", "value": "0 16px 48px rgb(9 8 8 / 0.14)", "purpose": "Separates the command board from the dark ground." },
+      { "name": "evidence-rest", "value": "0 4px 10px rgb(9 8 8 / 0.07)", "purpose": "Low physical-paper depth for evidence records." },
+      { "name": "evidence-active", "value": "0 8px 16px rgb(9 8 8 / 0.12)", "purpose": "State-driven lift for hover and selection." }
+    ],
+    "motion": [
+      { "name": "evidence-lift", "value": "180ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Quick evidence-card hover and selection response." }
+    ],
+    "breakpoints": [
+      { "name": "compact-desktop", "value": "1180px" },
+      { "name": "mobile-command", "value": "820px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Approve Exact Action",
+      "kind": "button",
+      "refersTo": "button-approve",
+      "description": "Authorizes one evidence-bound synthetic plan fingerprint.",
+      "html": "<button class=\"ds-approve\">Approve exact action</button>",
+      "css": ".ds-approve{min-height:44px;padding:.55rem .75rem;border:1px solid #090808;border-radius:0;background:#f3b512;color:#090808;font:800 .8rem 'IBM Plex Sans',sans-serif}.ds-approve:hover{filter:brightness(.96)}.ds-approve:focus-visible{outline:3px solid #1268bd;outline-offset:3px}.ds-approve:active{transform:translateY(1px)}"
+    },
+    {
+      "name": "Reject Plan",
+      "kind": "button",
+      "refersTo": "button-reject",
+      "description": "Rejects the proposed recovery plan without enabling a write.",
+      "html": "<button class=\"ds-reject\">Reject plan</button>",
+      "css": ".ds-reject{min-height:44px;padding:.55rem .75rem;border:1px solid #090808;border-radius:0;background:#fff;color:#791500;font:800 .8rem 'IBM Plex Sans',sans-serif}.ds-reject:hover{background:#f9f8f5}.ds-reject:focus-visible{outline:3px solid #1268bd;outline-offset:3px}.ds-reject:active{transform:translateY(1px)}"
+    },
+    {
+      "name": "Synthetic Evidence Card",
+      "kind": "card",
+      "refersTo": "evidence-card",
+      "description": "A provenance-bearing observation or inference record.",
+      "html": "<button class=\"ds-evidence\"><span><b>EV-02</b><em>SYNTHETIC</em></span><strong>Authentication failures confirmed</strong><small>APM-7721 · 14:05</small><i>OBSERVATION</i></button>",
+      "css": ".ds-evidence{width:240px;min-height:128px;padding:0;display:grid;text-align:left;background:#fff;color:#090808;border:1px solid #1e6b45;border-radius:6px;box-shadow:0 4px 10px rgb(9 8 8/.07);overflow:hidden}.ds-evidence>span,.ds-evidence>small{display:flex;justify-content:space-between;padding:.4rem .5rem}.ds-evidence em{padding:.12rem .3rem;background:#ded2b6;font-style:normal;font-size:.55rem}.ds-evidence>strong{padding:.5rem}.ds-evidence>i{padding:.2rem .5rem;background:#090808;color:#fff;font-style:normal;font-size:.55rem}.ds-evidence:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgb(9 8 8/.12)}.ds-evidence:focus-visible{outline:3px solid #1268bd;outline-offset:3px}"
+    },
+    {
+      "name": "Scenario Field",
+      "kind": "input",
+      "description": "Selects a synthetic guarded failure state.",
+      "html": "<label class=\"ds-field\">Demonstrate a guarded state<select><option>Nominal evidence</option><option>Prompt injection</option></select></label>",
+      "css": ".ds-field{display:grid;gap:.3rem;color:#55534d;font:400 .7rem 'IBM Plex Sans',sans-serif}.ds-field select{min-height:44px;padding:0 .7rem;background:#fff;color:#090808;border:1px solid #090808;border-radius:0;font:400 1rem 'IBM Plex Sans',sans-serif}.ds-field select:focus-visible{outline:3px solid #1268bd;outline-offset:3px}"
+    },
+    {
+      "name": "Guarded Action Gate",
+      "kind": "custom",
+      "description": "The protected terminal boundary between recommendation, authorization, and a real write.",
+      "html": "<section class=\"ds-gate\"><small>Unsupported claims <b>0</b></small><h3>ACTION GATE</h3><strong>EXECUTION DISABLED</strong><dl><div><dt>Target change</dt><dd>CHG-0284</dd></div><div><dt>Risk</dt><dd>Low</dd></div></dl><button disabled>ServiceNow write disabled</button></section>",
+      "css": ".ds-gate{width:250px;padding:1rem;display:grid;gap:.75rem;text-align:center;background:#fbfaf7;color:#090808;border:2px dashed #c52203;font-family:'IBM Plex Sans',sans-serif}.ds-gate h3{margin:0;font:900 1.45rem 'Barlow Condensed',sans-serif}.ds-gate>strong{color:#c52203}.ds-gate dl{margin:0}.ds-gate dl div{display:flex;justify-content:space-between;padding:.35rem 0;border-top:1px dotted #c9bfa8}.ds-gate dt{color:#55534d;text-transform:uppercase}.ds-gate dd{margin:0;font-weight:700}.ds-gate button{min-height:44px;border:0;background:#090808;color:#fff;font-weight:800;opacity:.5}"
+    },
+    {
+      "name": "Immutable Audit Row",
+      "kind": "custom",
+      "description": "Preserves actor, event, evidence ID, time, and trace state.",
+      "html": "<div class=\"ds-audit\"><time>14:19:27</time><b>Evidence Locker</b><span>Context fingerprinted</span><code>EV-02</code><strong>LOCKED</strong></div>",
+      "css": ".ds-audit{display:grid;grid-template-columns:4rem 7rem 1fr 3.5rem 5rem;gap:.5rem;padding:.4rem;background:#090808;color:#fff;border-top:1px solid #3f3d37;font:400 .65rem 'IBM Plex Sans',sans-serif}.ds-audit time{color:#f3b512;font-weight:800}.ds-audit strong{color:#b9e3c8;text-align:right}.ds-audit:focus-within{outline:3px solid #1268bd;outline-offset:2px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Fireground Command Board",
+    "overview": "Incident Command AI feels like a physical command sheet enlarged into a live operational surface: warm paper, dark rules, a numbered clock, evidence moving through named sectors, and one unmistakable guarded action boundary. It refuses the generic analytics dashboard and autonomous-chatbot silhouette.",
+    "keyCharacteristics": [
+      "Command-sheet materiality with near-black rules and warm paper surfaces.",
+      "Condensed incident typography paired with calm, readable operational text.",
+      "A large 24-hour command clock as the primary temporal anchor.",
+      "Signals, Impact, and Recovery as an explicit evidence progression.",
+      "Red reserved for severity, contradictions, and the protected execution boundary.",
+      "Synthetic provenance, evidence IDs, actors, and trace states remain visible."
+    ],
+    "rules": [
+      { "name": "The Signal Discipline Rule", "body": "Red, amber, orange, and green communicate operational state; never use them as arbitrary decoration.", "section": "colors" },
+      { "name": "The Compressed Authority Rule", "body": "Condensed display type names operational objects; it does not carry paragraphs or nuanced evidence.", "section": "typography" },
+      { "name": "The Protected Edge Rule", "body": "The action gate owns the terminal edge of the decision flow.", "section": "layout" },
+      { "name": "The Flat-Until-Active Rule", "body": "Depth is structural or state-driven; avoid floating ornamental panels.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do preserve the Signals → Impact → Recovery → Action Gate progression.",
+      "Do label every demonstration record as synthetic and retain its evidence ID and kind.",
+      "Do expose actor, timestamp, evidence ID, and trace state in immutable audit rows."
+    ],
+    "donts": [
+      "Don't imitate ServiceNow's proprietary interface or use its logo.",
+      "Don't turn the product into a generic rounded-card dashboard or chat transcript.",
+      "Don't imply that a recommendation executed; the public demonstration records authorization but keeps the write disabled."
+    ]
+  }
+}

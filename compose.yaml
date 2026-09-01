@@ -1,0 +1,19 @@
+services:
+  service:
+    build:
+      context: .
+      dockerfile: Dockerfile.service
+    read_only: true
+    tmpfs:
+      - /tmp
+    ports:
+      - "8000:8000"
+
+  companion:
+    build:
+      context: companion
+    read_only: true
+    ports:
+      - "4173:80"
+    depends_on:
+      - service

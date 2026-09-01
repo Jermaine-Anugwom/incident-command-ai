@@ -1,0 +1,44 @@
+{
+  "title": "Choose the Fireground command composition",
+  "question": "All three use the approved Fireground Command Board world. Choose the operational arrangement the coded interface should reproduce.",
+  "options": [
+    {
+      "id": "command-board",
+      "label": "Evidence Board",
+      "kicker": "ORIGINAL",
+      "lineage": "tactical worksheet with central evidence chain",
+      "thesis": "A live incident timeline feeds observations and inferences into one guarded action lane.",
+      "palette": ["#f3eddf", "#171713", "#d84a2b", "#f1b82d"],
+      "materials": ["laminated command sheet", "grease pencil", "magnetic evidence tags"],
+      "viewport": "Snapshot and objectives at left, timeline and evidence graph in the center, approval and rollback controls at right, audit and unit accountability below.",
+      "risk": "It carries the richest evidence story but requires careful responsive collapse.",
+      "comp": ".impeccable/mocks/composition/command-board.webp"
+    },
+    {
+      "id": "objective-spine",
+      "label": "Objective Spine",
+      "lineage": "incident objectives as the primary accountability structure",
+      "thesis": "Every service, evidence record, countermeasure, and approval attaches to a named incident objective.",
+      "palette": ["#f3eddf", "#171713", "#d84a2b", "#f1b82d"],
+      "materials": ["laminated command sheet", "ruled evidence lanes", "accountability tags"],
+      "viewport": "A compact timeline feeds a dominant objective spine whose selected row expands across service, evidence, action, and approval columns.",
+      "risk": "Its clean accountability model shows less causal graph structure at once.",
+      "comp": ".impeccable/mocks/composition/objective-spine.webp"
+    },
+    {
+      "id": "command-sectors",
+      "label": "Command Sectors",
+      "lineage": "signals, impact, and recovery sectors under one command clock",
+      "thesis": "Evidence advances through three operational sectors and converges on one protected action gate.",
+      "palette": ["#f3eddf", "#171713", "#d84a2b", "#f1b82d"],
+      "materials": ["laminated sector board", "dependency arrows", "command clock"],
+      "viewport": "A left command tower anchors three horizontal evidence sectors, with the approval gate dominating the far edge.",
+      "risk": "The strong sequence can imply more certainty than a branching investigation actually has.",
+      "comp": ".impeccable/mocks/composition/command-sectors.webp"
+    }
+  ],
+  "reroll": false,
+  "buildPath": {"value": "comp", "toggle": false},
+  "canon": false,
+  "steer": true
+}
