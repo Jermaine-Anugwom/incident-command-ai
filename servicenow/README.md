@@ -1,14 +1,14 @@
 # ServiceNow scoped application
 
-This directory contains the clean-room source blueprint for the `Incident Command AI` scoped application (`x_jana_ica`). It targets a free, non-production Personal Developer Instance and uses only synthetic records.
+This directory contains the clean-room source blueprint for the `Incident Command AI` scoped application (`x_2214142_ica`). It targets a free, non-production Personal Developer Instance and uses only synthetic records.
 
 The public companion and FastAPI service run without ServiceNow. The PDI is used to prove the native integration path: context ingestion, plan creation, approval, execution trace, and rollback request.
 
 ## Roles
 
-- `x_jana_ica.viewer`: read synthetic contexts, plans, and traces.
-- `x_jana_ica.commander`: approve or reject an exact plan fingerprint.
-- `x_jana_ica.executor`: execute a previously approved, unchanged plan.
+- `x_2214142_ica.viewer`: read synthetic contexts, plans, and traces.
+- `x_2214142_ica.commander`: approve or reject an exact plan fingerprint.
+- `x_2214142_ica.executor`: execute a previously approved, unchanged plan.
 
 ## Source-control path
 

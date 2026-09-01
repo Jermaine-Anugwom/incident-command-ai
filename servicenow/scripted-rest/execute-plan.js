@@ -1,6 +1,6 @@
 (function process(request, response) {
     var security = new IncidentCommandSecurity();
-    security.requireRole('x_jana_ica.executor');
+    security.requireRole('x_2214142_ica.executor');
 
     var planId = request.pathParams.id;
     var key = request.getHeader('Idempotency-Key');
@@ -8,7 +8,7 @@
         throw new sn_ws_err.BadRequestError('Idempotency-Key is required');
     }
 
-    var existing = new GlideRecordSecure('x_jana_ica_trace');
+    var existing = new GlideRecordSecure('x_2214142_ica_trace');
     existing.addQuery('event_key', key);
     existing.query();
     if (existing.next()) {
@@ -16,12 +16,12 @@
         return { result: 'duplicate', trace_id: existing.getUniqueValue() };
     }
 
-    var plan = new GlideRecordSecure('x_jana_ica_plan');
+    var plan = new GlideRecordSecure('x_2214142_ica_plan');
     if (!plan.get(planId)) {
         throw new sn_ws_err.NotFoundError('Plan not found');
     }
 
-    var approval = new GlideRecordSecure('x_jana_ica_approval');
+    var approval = new GlideRecordSecure('x_2214142_ica_approval');
     approval.addQuery('plan', planId);
     approval.addQuery('decision', 'approved');
     approval.addQuery('plan_fingerprint', plan.getValue('context_fingerprint'));
@@ -31,7 +31,7 @@
         throw new sn_ws_err.ConflictError('Matching approval is required');
     }
 
-    var trace = new GlideRecordSecure('x_jana_ica_trace');
+    var trace = new GlideRecordSecure('x_2214142_ica_trace');
     trace.initialize();
     trace.setValue('plan', planId);
     trace.setValue('event_key', key);

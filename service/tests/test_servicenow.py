@@ -6,7 +6,7 @@ from incident_command_ai.servicenow import ServiceNowClient, ServiceNowConfig
 @pytest.mark.asyncio
 async def test_context_request_uses_scoped_endpoint():
     async def handler(request: httpx.Request):
-        assert request.url.path == "/api/x_jana_ica/context/abc123"
+        assert request.url.path == "/api/x_2214142_ica/context/abc123"
         assert request.headers["accept"] == "application/json"
         return httpx.Response(200, json={"incident_id": "INC-1047"})
 

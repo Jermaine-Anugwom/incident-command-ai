@@ -12,7 +12,7 @@
 
 ## Emergency stop
 
-Disable the integration user's `x_jana_ica.executor` role first. Stop the FastAPI integration service second. Discovery and read-only inspection can remain available.
+Disable the integration user's `x_2214142_ica.executor` role first. Stop the FastAPI integration service second. Discovery and read-only inspection can remain available.
 
 ## Suspicious input
 

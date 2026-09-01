@@ -1,15 +1,15 @@
 {
-  "scope": "x_jana_ica",
+  "scope": "x_2214142_ica",
   "name": "Incident Command AI",
   "data_classification": "synthetic_demo_only",
   "tables": [
-    {"name": "x_jana_ica_plan", "fields": ["incident", "context_fingerprint", "state", "payload", "created_by"]},
-    {"name": "x_jana_ica_action", "fields": ["plan", "action_key", "operation", "target", "state", "rollback_condition"]},
-    {"name": "x_jana_ica_approval", "fields": ["plan", "plan_fingerprint", "approver", "decision", "decided_at"]},
-    {"name": "x_jana_ica_trace", "fields": ["plan", "event_key", "actor", "input_fingerprint", "result", "detail"]},
-    {"name": "x_jana_ica_evaluation", "fields": ["plan", "unsupported_claims", "abstained", "latency_ms", "overridden"]}
+    {"name": "x_2214142_ica_plan", "fields": ["incident", "context_fingerprint", "state", "payload", "created_by"]},
+    {"name": "x_2214142_ica_action", "fields": ["plan", "action_key", "operation", "target", "state", "rollback_condition"]},
+    {"name": "x_2214142_ica_approval", "fields": ["plan", "plan_fingerprint", "approver", "decision", "decided_at"]},
+    {"name": "x_2214142_ica_trace", "fields": ["plan", "event_key", "actor", "input_fingerprint", "result", "detail"]},
+    {"name": "x_2214142_ica_evaluation", "fields": ["plan", "unsupported_claims", "abstained", "latency_ms", "overridden"]}
   ],
-  "roles": ["x_jana_ica.viewer", "x_jana_ica.commander", "x_jana_ica.executor"],
+  "roles": ["x_2214142_ica.viewer", "x_2214142_ica.commander", "x_2214142_ica.executor"],
   "rest_resources": [
     "GET /context/{incident_sys_id}",
     "POST /plans",

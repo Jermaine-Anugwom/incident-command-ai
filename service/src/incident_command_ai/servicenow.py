@@ -28,13 +28,13 @@ class ServiceNowClient:
         )
 
     async def get_context(self, incident_sys_id: str) -> dict[str, Any]:
-        response = await self._client.get(f"/api/x_jana_ica/context/{incident_sys_id}")
+        response = await self._client.get(f"/api/x_2214142_ica/context/{incident_sys_id}")
         response.raise_for_status()
         return response.json()
 
     async def create_plan(self, payload: dict[str, Any], idempotency_key: str) -> dict[str, Any]:
         response = await self._client.post(
-            "/api/x_jana_ica/plans",
+            "/api/x_2214142_ica/plans",
             json=payload,
             headers={"Idempotency-Key": idempotency_key},
         )
