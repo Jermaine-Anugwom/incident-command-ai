@@ -1,10 +1,25 @@
 # Incident Command AI
 
-An evidence-bound major-incident command system that connects operational signals to one approval-gated ServiceNow action. It is a clean-room Forward-Deployed AI engineering demonstration built entirely with synthetic data.
+An evidence-bound major-incident command system that connects operational signals to one approval-gated ServiceNow action.
 
-> **Status:** public offline demonstration ready. Optional ServiceNow PDI integration evidence remains pending and is not required to run the project.
+> **Synthetic data only. Status:** public offline demonstration ready. Optional ServiceNow PDI integration evidence remains pending and is not required to run the project.
 
 ![Incident Command AI Fireground Command Board](docs/assets/incident-command-board.png)
+
+[Open the live demonstration](https://jermaine-anugwom.github.io/incident-command-ai/)
+
+## Run it locally
+
+Requires Git and Docker with Compose v2. Initial setup downloads dependencies and images; no model key or ServiceNow account is needed.
+
+```bash
+git clone https://github.com/Jermaine-Anugwom/incident-command-ai.git
+cd incident-command-ai
+docker compose up --build
+```
+
+Open the [command board](http://127.0.0.1:4173) or [API documentation](http://127.0.0.1:8000/docs).
+The public board uses synthetic fixtures and cannot write to ServiceNow.
 
 ## Why this is forward deployed
 
@@ -30,7 +45,9 @@ The companion interface is organized around a command clock and three operationa
 
 The guarded action gate remains closed until the exact plan receives a valid approval. The public demonstration records synthetic authorization but deliberately keeps the ServiceNow write disabled.
 
-## Quickstart
+## Development setup
+
+From the cloned repository, use Python 3.12 for the service and Node.js 22 for the companion.
 
 ### Service
 
